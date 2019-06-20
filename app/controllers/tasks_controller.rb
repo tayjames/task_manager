@@ -3,6 +3,16 @@ class TasksController < ApplicationController
     @tasks = ['Task 1', 'Task 2', 'Task 3']
   end
 
-  def new 
+  def new
+  end
+
+  def create
+    task = Task.new({
+      title: params[:task][:description]
+      })
+
+    task.save
+
+    redirect_to '/tasks'
   end
 end
